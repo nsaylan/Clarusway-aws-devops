@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: This template creates an EC2 instance for project101. Three photgraphs are taken from github. 
+It creates a static-web. 
+
+Resources:
+  ProjectInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c94855ba95c71c99
+      InstanceType: t2.micro
+      KeyName: First_key_pair
+      SecurityGroups:
+        - HTTPandSSH
+      UserData: 
+        Fn::Base64:                                # YAML makes userdata much cleaner
+          !Sub |
+              #!/bin/bash
+
+              #update os
+              yum update -y
+              #install apache server
+              yum install httpd -y
+              # start apache server
+              systemctl start httpd
+              systemctl enable httpd
+              sudo chmod -R 777 /var/www/html/
+              cd /var/www/html/
+              wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/index.html
+              wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat0.jpg
+              wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat1.jpg
+              wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat2.jpg
+      Tags:
+        - Key: Name
+          Value: Kittens-Carousel
+      
