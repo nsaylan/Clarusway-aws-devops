@@ -70,6 +70,10 @@ $ mvn archetype:generate -DgroupId=com.clarus.maven -DartifactId=maven-experimen
 
 - Cd into the project folder.
 
+```bash
+$ cd maven-experiment
+```
+
 - Run the command below to be able to use tree command.
 
 ```bash
@@ -84,11 +88,21 @@ $ tree
 
 - Go into the folder where App.java resides and ```cat``` the auto generated ```hello world``` application in Java.
 
+```bash
+$ cat src/main/java/com/clarus/maven/App.java
+```
 - Replace the content of the App.java file with the content of the App.java file in this repo.
 
 - Go into the project's root folder.
 
 - Replace the content of the ```pom.xml``` file with the content of the pom.xml file in this repo.
+
+- Make uncomment the rows in pom.xml
+
+<!--<properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>-->
 
 - Since we've install Java-11 on the EC2 machine, uncomment the ```properties``` tag of the new pom.xml file.
 
@@ -113,11 +127,12 @@ $ mvn compile
 - Run the command below to show how to test a Maven project.
 
 
->### mvn clean test
+- Run the command in maven-experiment folder
 
 ```bash
 $ mvn clean test
 ```
+
 
 - Show that there is a new folder named ```target``` in the project root. 
 
@@ -190,6 +205,9 @@ $ mvn clean package
 ```bash
 $ scp -i <path-to-your-pem-file> -r <path-to-your-home-directory>/.aws ec2-user@<IP-of-your-instance>:/home/ec2-user/
 ```
+```bash
+$ scp -i ~/Desktop/Keypair/First_key_pair.pem -r ~/.aws ec2-user@18.206.192.85:/home/ec2-user/
+```
 
 - Check if the the credentials are transferred to EC2 instance.
 
@@ -254,6 +272,7 @@ $ sudo systemctl enable httpd
 ```bash
 $ sudo cp -a site/. /var/www/html
 ```
+
 
 
 
