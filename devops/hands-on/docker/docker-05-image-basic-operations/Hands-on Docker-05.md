@@ -168,14 +168,14 @@ CMD python ./welcome.py
 - Build Docker image from Dockerfile locally, tag it as `<Your_Docker_Hub_Account_Name>/<Your_Image_Name>:<Tag>` and explain steps of building. Note that repo name is the combination of `<Your_Docker_Hub_Account_Name>/<Your_Image_Name>`.
 
 ```bash
-docker build -t "callahanclarus/flask-app:1.0" .
+docker build -t "callahanclarus(nsaylan)/flask-app:1.0" .
 docker image ls
 ```
 
 - Run the newly built image as container in detached mode, connect host `port 80` to container `port 80`, and name container as `welcome`. Then list running containers and connect to EC2 instance from the browser to show the Flask app is running.
 
 ```bash
-docker run -d --name welcome -p 80:80 callahanclarus/flask-app:1.0
+docker run -d --name welcome -p 80:80 callahanclarus(nsaylan/flask-app:1.0
 docker ps
 ```
 
@@ -194,7 +194,7 @@ docker login
 - Push newly built image to Docker Hub, and show the updated repo on Docker Hub.
 
 ```bash
-docker push callahanclarus/flask-app
+docker push callahanclarus(nsaylan/flask-app
 ```
 
 - Delete image with `image id` locally.
