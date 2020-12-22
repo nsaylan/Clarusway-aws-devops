@@ -1134,11 +1134,11 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/
 - Prepare static inventory file with name of `hosts.ini` for Ansible under `ansible/inventory` folder using Docker machines private IP addresses.
 
 ```ini
-172.31.91.243   ansible_user=ec2-user  
-172.31.87.143   ansible_user=ec2-user
-172.31.90.30    ansible_user=ec2-user
-172.31.92.190   ansible_user=ec2-user
-172.31.88.8     ansible_user=ec2-user
+172.31.91.243   ansible_user=ec2-user  #private ip
+172.31.87.143   ansible_user=ec2-user #private ip
+172.31.90.30    ansible_user=ec2-user #private ip
+172.31.92.190   ansible_user=ec2-user #private ip
+172.31.88.8     ansible_user=ec2-user #private ip
 ```
 
 - Commit the change, then push the cloudformation template to the remote repo.
