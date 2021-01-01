@@ -42,6 +42,7 @@ At the end of the this hands-on training, students will be able to;
 
 |Protocol|Direction|Port Range|Purpose|Used By|
 |---|---|---|---|---|
+|TCP|Inbound|22|
 |TCP|Inbound|6443|Kubernetes API server|All|
 |TCP|Inbound|2379-2380|`etcd` server client API|kube-apiserver, etcd|
 |TCP|Inbound|10250|Kubelet API|Self, Control plane|
@@ -52,6 +53,7 @@ At the end of the this hands-on training, students will be able to;
 
 |Protocol|Direction|Port Range|Purpose|Used By|
 |---|---|---|---|---|
+|TCP|Inbound|22|
 |TCP|Inbound|10250|Kubelet API|Self, Control plane|
 |TCP|Inbound|30000-32767|NodePort Services†|All|
 
@@ -314,7 +316,7 @@ nginx-server   NodePort    10.110.144.60   <none>        80:32276/TCP   113s   r
 - Clean the service and pod from the cluster.
 
 ```bash
-kubectl delete svc nginx-server
+kubectl delete service nginx-server
 kubectl delete pods nginx-server
 ```
 
