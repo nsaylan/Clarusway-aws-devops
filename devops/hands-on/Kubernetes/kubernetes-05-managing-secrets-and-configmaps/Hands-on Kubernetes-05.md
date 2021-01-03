@@ -151,7 +151,7 @@ $ kubectl apply -f ./secret.yaml
 
 The output is similar to:
 ```text
-secret "mysecret" created
+secret/mysecret created
 ```
 
 ### Decoding a Secret

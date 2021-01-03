@@ -41,7 +41,6 @@ kubectl get no
 ```bash
 kubectl explain pv
 ```
-
 - Log into the `kube20-worker-1` node, create a `pv-data` directory under home folder, also create an `index.html` file with `Welcome to Kubernetes persistence volume lesson` text and note down path of the `pv-data` folder.
 
 ```bash
@@ -353,7 +352,7 @@ kubectl delete -f .
 - Create a folder name it emptydir.
 
 ```bash
-mkdir emptydir && cd empydir
+mkdir emptydir && cd emptydir
 ```
 
 - Create an nginx.yaml file for creating an nginx pod.
