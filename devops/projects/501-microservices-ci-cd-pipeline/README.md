@@ -3183,6 +3183,9 @@ git checkout feature/msp-23
 ]
 }
 ```
+git add.
+git commit -m "add rke policies"
+git push -u origin 
 
 * Create an IAM Role with name of `call-rke-role` to attach RKE nodes (instances) using `call-rke-controlplane-policy` and `call-rke-etcd-worker-policy`.
 
