@@ -3183,9 +3183,6 @@ git checkout feature/msp-23
 ]
 }
 ```
-git add.
-git commit -m "add rke policies"
-git push -u origin 
 
 * Create an IAM Role with name of `call-rke-role` to attach RKE nodes (instances) using `call-rke-controlplane-policy` and `call-rke-etcd-worker-policy`.
 
@@ -3393,20 +3390,6 @@ SSH User          : rancher
 Label             : os=rancheros
 ```
 
-* Create a Kubernetes cluster using Rancher with RKE and new nodes in AWS (on one EC2 instance only) and name it as `petclinic-cluster`.
-
-```text
-Cluster Type      : Amazon EC2
-Name Prefix       : petclinic-k8s-instance
-Count             : 1
-etcd              : checked
-Control Plane     : checked
-Worker            : checked
-```
-
-* Create `petclinic-staging-ns` and `petclinic-prod-ns` namespaces on `petclinic-cluster` with Rancher.
-
-
 ## MSP 26 - Prepare a Staging Pipeline
 
 * Create `feature/msp-26` branch from `release`.
@@ -3416,6 +3399,19 @@ git checkout release
 git branch feature/msp-26
 git checkout feature/msp-26
 ```
+
+* Create a Kubernetes cluster using Rancher with RKE and new nodes in AWS  and name it as `petclinic-cluster-staging`.
+
+```text
+Cluster Type      : Amazon EC2
+Name Prefix       : petclinic-k8s-instance
+Count             : 3
+etcd              : checked
+Control Plane     : checked
+Worker            : checked
+```
+
+* Create `petclinic-staging-ns` namespace on `petclinic-cluster-staging` with Rancher.
 
 * Create a Jenkins Job and name it as `create-ecr-docker-registry-for-petclinic-staging` to create Docker Registry for `Staging` manually on AWS ECR.
 
@@ -3607,6 +3603,19 @@ git checkout release
 git branch feature/msp-27
 git checkout feature/msp-27
 ```
+
+* Create a Kubernetes cluster using Rancher with RKE and new nodes in AWS (on one EC2 instance only) and name it as `petclinic-cluster`.
+
+```text
+Cluster Type      : Amazon EC2
+Name Prefix       : petclinic-k8s-instance
+Count             : 3
+etcd              : checked
+Control Plane     : checked
+Worker            : checked
+```
+
+* Create `petclinic-prod-ns` namespace on `petclinic-cluster` with Rancher.
 
 * Create a Jenkins Job and name it as `create-ecr-docker-registry-for-petclinic-prod` to create Docker Registry for `Production` manually on AWS ECR.
 
