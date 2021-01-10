@@ -3802,44 +3802,9 @@ git branch feature/msp-28
 git checkout feature/msp-28
 ```
 
-* Create a target group with name of `matt-petclinic-http-443-tg` with following setup and add the `petclinic application instances` to it.
+* Create an `A` record of `petclinic.clarusway.us` in your hosted zone (in our case `clarusway.us`) using AWS Route 53 domain registrar and bind it to your `petclinic cluster`.
 
-```text
-Target type         : instance
-Protocol            : HTTPS
-Port                : 443
-
-<!-- Health Checks Settings -->
-Protocol            : HTTPS
-Path                : /healthz
-Port                : traffic port
-Healthy threshold   : 3
-Unhealthy threshold : 3
-Timeout             : 5 seconds
-Interval            : 10 seoconds
-Success             : 200
-```
-
-* Create Application Load Balancer with name of `matt-petclinic-alb` using `matt-rke-alb-sg` security group with following settings and add `matt-petclinic-http-443-tg` target group to it.
-
-```text
-Scheme              : internet-facing
-IP address type     : ipv4
-
-<!-- Listeners-->
-Protocol            : HTTPS/HTTP
-Port                : 443/80
-Availability Zones  : Select AZs of RKE instances
-Target group        : `matt-petclinic-http-443-tg` target group
-```
-
-* Configure ALB Listener of HTTP on `Port 80` to redirect traffic to HTTPS on `Port 443`.
-
-* Create DNS A record for `rancher.clarusway.us` and 
-
-* Create an `A` record of `petclinic003.clarusway.us` in your hosted zone (in our case `clarusway.us`) using AWS Route 53 domain registrar and attach the `matt-petclinic-alb` application load balancer to it.
-
-* Configure TLS(SSL) certificate for `petclinic003.clarusway.us` using `cert-manager` on petclinic K8s cluster with the following steps.
+* Configure TLS(SSL) certificate for `petclinic.clarusway.us` using `cert-manager` on petclinic K8s cluster with the following steps.
 
 * Log into Jenkins Server and configure the `kubectl` to connect to petclinic cluster by getting the `Kubeconfig` file from Rancher and save it as `$HOME/.kube/config` or set `KUBECONFIG` environment variable.
 
