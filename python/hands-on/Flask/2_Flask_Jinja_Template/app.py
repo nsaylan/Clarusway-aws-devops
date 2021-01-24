@@ -8,7 +8,7 @@ def head():
 
 @app.route("/ikinci")
 def second():
-    return render_template("yeni.html", hazirlayan = "Serdar")
+    return render_template("yeni.html", hazirlayan = "Necip")
 
 if __name__ == "__main__":
     app.run(debug = True)
