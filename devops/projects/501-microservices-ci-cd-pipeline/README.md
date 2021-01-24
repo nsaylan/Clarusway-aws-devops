@@ -160,7 +160,7 @@ git branch feature/msp-4
 git checkout feature/msp-4
 ```
 
-* Prepare a script to package the application with maven wrapper and save it as `package-with-mvn-wrapper.sh`.
+* Prepare a script to package the application with maven wrapper and save it as `package-with-mvn-wrapper.sh` under `petclinic-microservices` folder.
 
 ``` bash
 ./mvnw clean package
@@ -376,7 +376,7 @@ git branch feature/msp-7
 git checkout feature/msp-7
 ```
 
-* Prepare a script to build the docker images and save it as `build-dev-docker-images.sh`.
+* Prepare a script to build the docker images and save it as `build-dev-docker-images.sh` under `petclinic-microservices` folder.
 
 ``` bash
 ./mvnw clean package
@@ -425,7 +425,7 @@ git branch feature/msp-8
 git checkout feature/msp-8
 ```
 
-* Prepare docker compose file to deploy the application locally and save it as `docker-compose-local.yml`.
+* Prepare docker compose file to deploy the application locally and save it as `docker-compose-local.yml` under `petclinic-microservices` folder.
 
 ``` yaml
 version: '2'
@@ -540,7 +540,7 @@ services:
     - 9091:9090
 ```
 
-* Prepare a script to test the deployment of the app locally with `docker-compose-local.yml` and save it as `test-local-deployment.sh`.
+* Prepare a script to test the deployment of the app locally with `docker-compose-local.yml` and save it as `test-local-deployment.sh` under `petclinic-microservices` folder.
 
 ``` bash
 docker-compose -f docker-compose-local.yml up
@@ -3809,6 +3809,7 @@ git checkout feature/msp-28
 * Log into Jenkins Server and configure the `kubectl` to connect to petclinic cluster by getting the `Kubeconfig` file from Rancher and save it as `$HOME/.kube/config` or set `KUBECONFIG` environment variable.
 
 ```bash
+#create petclinic-config file under home folder(/home/ec2-user).
 nano petclinic-config
 # paste the content of kubeconfig file and save it.
 chmod 400 petclinic-config
