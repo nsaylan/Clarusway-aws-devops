@@ -67,10 +67,10 @@ def greet(name):
     return render_template('greet.html', isim=name)
 #
 # Create a function named list10 which creates a list counting from 1 to 10 within `list10.html` 
-# and assign to the route of ('/list10')
-@app.route('/list10')
+# and assign to the route of ('/list100')
+@app.route('/list100')
 def list10():
-    return render_template('list10.html')
+    return render_template('list100.html')
 
 @app.route('/list100')
 def list100():
@@ -84,5 +84,9 @@ def evens():
 
 # Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__=='__main__':
+<<<<<<< HEAD
     #app.run(debug = True)
     app.run(host='0.0.0.0', port=80)
+=======
+   app.run(host='0.0.0.0', port=80)
+>>>>>>> 81da201a6f381afcf1fde7301df5cb6cdf4e0e92
