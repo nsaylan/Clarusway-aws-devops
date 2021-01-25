@@ -105,14 +105,22 @@ if __name__=="__main__":
 - Save the complete code as `hello-world-app.py` file under `hands-on/flask-01-hello-world-app-on-ec2-linux2` folder.
 
 - Add and commit all changes on local repo
+bash
+git add .
+git commit -m "..."
+git push
 
 - Push `hello-world-app.py` to remote repo `clarusway-aws-devops` on GitHub.
 
 ## Part 4 - Run the Hello World App on EC2 Instance
 
 - Download the web application file from GitHub repo.
+bash
+wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops/master/python/hands-on/flask-01-hello-world-app-on-ec2-linux2/hello-world-app.py
 
 - Run the web application
+bash
+sudo python3 hello-world-app.py
 
 - Connect the Hello World application from the web browser
 
