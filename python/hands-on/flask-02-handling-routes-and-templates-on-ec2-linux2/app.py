@@ -65,7 +65,7 @@ def greet_admin():
 @app.route('/<name>')
 def greet(name):
     return render_template('greet.html', isim=name)
-#
+
 # Create a function named list10 which creates a list counting from 1 to 10 within `list10.html` 
 # and assign to the route of ('/list100')
 @app.route('/list10')
