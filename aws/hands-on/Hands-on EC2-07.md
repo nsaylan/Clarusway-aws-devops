@@ -219,7 +219,7 @@ Successfully created load balancer!
     </head>
     <body>
         <h1>Testing Application Load Balancer</h1>
-        <p>This web server is launched from the launch configuration by YOUR_NAME</p>
+        <p>This web server is launched from the launch configuration by NECİP</p>
         <p>This instance is created at <b>$DATE_TIME</b></p>
         <p>Private IP address of this instance is <b>$PRIVATE_IP</b></p>
         <p>Public IP address of this instance is <b>$PUBLIC_IP</b></p>
