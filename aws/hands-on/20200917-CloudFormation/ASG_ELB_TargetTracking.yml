@@ -30,17 +30,17 @@ Parameters:
 Mappings:
   RegionImageMap:
     us-east-1:
-      AMI: ami-0c94855ba95c71c99
+      AMI: ami-0c94855ba95c71c99 #güncellenecek
     us-east-2:
-      AMI: ami-0603cbe34fd08cb81
+      AMI: ami-0603cbe34fd08cb81 #güncellenecek
     us-west-1:
-      AMI: ami-0e65ed16c9bf1abc7
+      AMI: ami-0e65ed16c9bf1abc7 #güncellenecek
     us-west-2:
-      AMI: ami-0841edc20334f9287
+      AMI: ami-0841edc20334f9287 #güncellenecek
     eu-west-1:
-      AMI: ami-08a2aed6e0a6f9c7d
+      AMI: ami-08a2aed6e0a6f9c7d #güncellenecek
 Resources:
- 
+
   myAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
@@ -154,3 +154,18 @@ Outputs:
       - ''
       - - 'http://'
         - !GetAtt myApplicationLoadBalancer.DNSName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
