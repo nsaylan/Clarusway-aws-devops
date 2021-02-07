@@ -73,10 +73,10 @@ Resources:
           chmod -R 777 /var/www/html
           echo "<html>
           <head>
-              <title> Congratulations! You have created an instance from Launch Template</title>
+              <title> Congratulations! You have created an instance from Launch Configuration</title>
           </head>
           <body>
-              <h1>This web server is launched from launch configuration by YOUR_NAME</h1>
+              <h1>This web server is launched from launch configuration by NECİP</h1>
               <p>This instance is created at <b>$DATE_TIME</b></p>
               <p>Private IP address of this instance is <b>$PRIVATE_IP</b></p>
               <p>Public IP address of this instance is <b>$PUBLIC_IP</b></p>
@@ -130,7 +130,7 @@ Resources:
       UnhealthyThresholdCount: 3
       VpcId: !Ref VpcId
   
-  
+ 
   mySecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
@@ -144,9 +144,7 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
-          
-    
-  
+            
 Outputs:
   URL:
     Description: The URL of the website

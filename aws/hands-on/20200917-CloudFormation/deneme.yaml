@@ -1,0 +1,65 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  
+Parameters:
+  
+
+  
+Mappings:
+  
+
+  
+Resources:
+
+  myListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      AlpnPolicy:
+        - String
+      Certificates:
+        - Certificate
+      DefaultActions: #required
+        - Action
+      LoadBalancerArn: String #required
+      Port: Integer
+      Protocol: String
+      SslPolicy: String
+
+
+
+  myALBTargetGrp:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      HealthCheckIntervalSeconds: 20
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 3
+      Name: myALBTargetGrp
+      Port: 80
+      Protocol: HTTP
+      UnhealthyThresholdCount: 2
+      VpcId: 
+
+  mySecGrp:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: enable SSH and HTTP #required
+      GroupName: mySecGrp
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          Description: SSH
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: 0.0.0.0/0
+          Description: HTTP
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+
+
+
+
+
+
+  
+Outputs:
