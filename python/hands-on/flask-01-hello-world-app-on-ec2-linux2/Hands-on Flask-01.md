@@ -53,28 +53,29 @@ Followings are some of features of Flask Framework;
 - Launch an Amazon EC2 instance using the Amazon Linux 2 AMI with security group allowing SSH (Port 22) and HTTP (Port 80) connections.
 
 - Connect to your instance with SSH.
-bash
+```bash
 ssh -i "First_key_pair.pem" ec2-user@ec2-3-86-253-240.compute-1.amazonaws.com
-
+```
 - Update the installed packages and package cache on your instance.
-bash
+```bash
 sudo yum update -y
-
+```
 - Install `Python 3` packages.
-bash
+```bash
 sudo yum install python3 -y
-
+```
 - Check the python3 version
-bash
+```bash
 python3 --version
-
+```
 - Install `Python 3 Flask` framework.
-bash
+```bash
 sudo pip3 install flask
-
+```
 - Check the versions of Flask framework packages (flask, click, itsdangerous, jinja2, markupSafe, werkzeug)
-bash
+```bash
 pip3 list
+```
 ## Part 3 - Write a Simple Hello World Web Application on GitHub Repo
 
 - Create folder named `flask-01-hello-world-app-on-ec2-linux2` within `clarusway-python-workshop` repo
@@ -82,46 +83,46 @@ pip3 list
 - Create python file named `hello-world-app.py`
 
 - Import Flask module.
-bash
+```bash
 from flask import Flask
-
+```
 - Create an object named `app` from imported Flask module.
-bash
+```bash
 app = Flask(__name__)
-
+```
 - Create a function `hello` which returns a string `Hello World`.
-bash
+```bash
 @app.route ("/")
 def hello():
     return "Hello World"
-
+```
 - Assign a URL route the `hello` function with decorator `@app.route('/')`.
 
 - Enable the web application to be run in main, so that it can be reached from anywhere from port 80.
-bash
+```bash
 if __name__=="__main__":
     app.run(host='0.0.0.0', port=80)
-
+```
 - Save the complete code as `hello-world-app.py` file under `hands-on/flask-01-hello-world-app-on-ec2-linux2` folder.
 
 - Add and commit all changes on local repo
-bash
+```bash
 git add .
 git commit -m "..."
 git push
-
+```
 - Push `hello-world-app.py` to remote repo `clarusway-aws-devops` on GitHub.
 
 ## Part 4 - Run the Hello World App on EC2 Instance
 
 - Download the web application file from GitHub repo.
-bash
+```bash
 wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops/master/python/hands-on/flask-01-hello-world-app-on-ec2-linux2/hello-world-app.py
-
+```
 - Run the web application
-bash
+```bash
 sudo python3 hello-world-app.py
-
+```
 - Connect the Hello World application from the web browser
 
 - Connect the Hello World application from the terminal with `curl` command.
