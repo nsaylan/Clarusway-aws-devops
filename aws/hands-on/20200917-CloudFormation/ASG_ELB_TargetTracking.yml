@@ -39,6 +39,7 @@ Mappings:
       AMI: ami-0841edc20334f9287 #güncellenecek
     eu-west-1:
       AMI: ami-08a2aed6e0a6f9c7d #güncellenecek
+      
 Resources:
 
   myAutoScalingGroup:
