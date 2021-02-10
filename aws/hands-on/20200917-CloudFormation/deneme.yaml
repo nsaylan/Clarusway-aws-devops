@@ -30,7 +30,7 @@ Resources:
       MinSize: '1' #required
       TargetGroupARNs:
         - !Ref myALBTargetGrp
-      TerminationPolicies: OldestInstance
+      
                                 
   myLaunchTemplate:
     Type: AWS::EC2::LaunchTemplate

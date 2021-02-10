@@ -11,7 +11,7 @@ Resources:
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Enable HTTP for Apache Web Server
+      GroupDescription: Enable HTTP for Apache Web Server and SSH terminal
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -24,14 +24,13 @@ Resources:
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-09d95fab7fff3776c
+      ImageId: ami-09d95fab7fff3776c #güncellenecek
       InstanceType: t2.micro
       KeyName: First_key_pair
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
       Tags:                
-        -                        
-          Key: Name
+        - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack   
       UserData:
         Fn::Base64: 
