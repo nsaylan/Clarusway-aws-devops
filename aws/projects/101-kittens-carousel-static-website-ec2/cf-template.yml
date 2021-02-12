@@ -7,7 +7,7 @@ Resources:
   ProjectInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0c94855ba95c71c99
+      ImageId: ami-0c94855ba95c71c99 #güncellenecek
       InstanceType: t2.micro
       KeyName: First_key_pair
       SecurityGroups:
@@ -16,7 +16,6 @@ Resources:
         Fn::Base64:                                # YAML makes userdata much cleaner
           !Sub |
               #!/bin/bash
-
               #update os
               yum update -y
               #install apache server
