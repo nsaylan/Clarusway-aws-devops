@@ -22,6 +22,8 @@ At the end of the this hands-on training, students will be able to;
 
 ## Part 1 - Creating RDS Instance on AWS Management Console
 
+- Creat a Security Group named DatabaseSecGrp. inboun rule is MySQL/Aurora port:3306.
+
 - First, go to the Amazon RDS Service and select Database section from the left-hand menu, click databases and then click Creating Database.
 
 - Choose a database creation method.
