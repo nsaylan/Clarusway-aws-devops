@@ -23,6 +23,18 @@ EXIT;
 # Then set root password: 'root1234' and yes 'y' to all remaining ones.
 sudo mysql_secure_installation
 
+#Remove anonymous users? [Y/n]
+Y
+
+# Disallow root login remotely? [Y/n]
+y
+
+# Remove test database and access to it? [Y/n]
+Y
+
+# Reload privilege tables now? [Y/n]
+Y
+
 # Show that you can not log into mysql terminal without password anymore.
 mysql -u root
 
@@ -44,6 +56,9 @@ SHOW DATABASES;
 
 # Create a user named 'clarususer'.
 CREATE USER clarususer IDENTIFIED BY 'clarus1234';
+
+# Show users created.
+SELECT Host, User, Password FROM user;
 
 # Grant permissions to the user clarususer for database clarusdb.
 GRANT ALL ON clarusdb.* TO clarususer IDENTIFIED BY 'clarus1234' WITH GRANT OPTION;
