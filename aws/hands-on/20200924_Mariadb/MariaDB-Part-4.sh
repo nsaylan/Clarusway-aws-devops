@@ -17,7 +17,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install mariadb-client
 
 # Connect the clarusdb on MariaDB Server on the other EC2 instance (pw:clarus1234).
-mysql -u clarususer -p -h ec2-54-144-53-247.compute-1.amazonaws.com
+mysql -h ec2-54-144-53-247.compute-1.amazonaws.com -u clarususer -p  #güncellenecek
 
 # Show that clarususer can do same db operations on MariaDB Server instance.
 SHOW DATABASES;
