@@ -13,6 +13,7 @@ db = SQLAlchemy(app)
 # Create users table within MySQL db and populate with sample data
 # Execute the code below only once.
 # Write sql code for initializing users table..
+
 drop_table = 'DROP TABLE IF EXISTS users;'
 users_table = """
 CREATE TABLE users(
@@ -27,30 +28,32 @@ VALUES
 	("Charlie Byrd", "charlie.byrd@clarusway.com");
 """
 
-db.session.execute(drop_table)
+db.session.execute(drop_table) # burası yukarıdakiler perminent yapıyor.
 db.session.execute(users_table)
 db.session.execute(data)
 db.session.commit()
 
-# Write a function named `find_emails` which find emails using keyword from the user table in the db,
+# Write a function named `find_emails` which find emails using keyword from the users table in the db,
 # and returns result as tuples `(name, email)`.
+
 def find_emails(keyword):
     query = f"""
     SELECT * FROM users WHERE username like '%{keyword}%';
     """
     result = db.session.execute(query)
     user_emails = [(row[0], row[1]) for row in result]
-    # if there is no user with given name in the db, then give warning
-    if not any(user_emails):
+    if not any(user_emails): # if there is no user with given name in the db, then give warning
         user_emails = [('Not found.', 'Not Found.')]
     return user_emails
-
+    
 # Write a function named `insert_email` which adds new email to users table the db.
+
 def insert_email(name, email):
     query = f"""
     SELECT * FROM users WHERE username like '{name}';
     """
     result = db.session.execute(query)
+    
     # default text
     response = 'Error occurred..'
     # if user input are None (null) give warning
@@ -97,5 +100,5 @@ def add_email():
 
 # Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__ == '__main__':
-    # app.run(debug=True)
-   app.run(host='0.0.0.0', port=80)
+   app.run(debug=True)
+   # app.run(host='0.0.0.0', port=80)
