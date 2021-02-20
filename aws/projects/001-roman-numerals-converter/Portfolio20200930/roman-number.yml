@@ -19,7 +19,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
-          CidrIp: 0.0.0.0/0
+          CidrIp: 0.0.0.0/0 #slash mutlaka yazılmalı
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
@@ -36,11 +36,8 @@ Resources:
       Tags:                    
         - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack   
-      UserData: 
-        Fn::Base64: 
-          !Sub |
+      UserData: !Base64 |
             #!/bin/bash
-
             yum update -y
             yum install python3 -y
             pip3 install flask
@@ -59,3 +56,5 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHost.PublicDnsName
     Description: Roman Numerals Converter Application URL
+
+# wget -P templates wget https://raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/Portfolio20200930/app.py: template klasörünün altına kaydediyor.
