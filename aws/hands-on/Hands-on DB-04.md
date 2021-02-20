@@ -184,13 +184,6 @@ USE clarusway;
 ```sql
 SHOW TABLES;
 ```
-
-- Show current users defined in the RDS DB instance.
-
-```sql
-SELECT Host, User, authentication_string FROM user;
-```
-
 ### STEP 3 - Creating Tables in RDS DB Instance and Populating with Data
 
 
