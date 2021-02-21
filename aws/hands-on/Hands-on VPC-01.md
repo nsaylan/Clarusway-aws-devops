@@ -12,31 +12,11 @@ At the end of the this hands-on training, students will be able to;
 
 - learn how to set route tables as public and private,
 
-- learn how to create Bastion host and connect to private subnet from internet
-
-- learn how to create NAT Gateway and NAT Instance
-
-- learn how to create VPC peering between two VPCs
-
-- learn how to create VPC endpoint 
-
-- learn how to use NACL (Network Access List)
-
-## Outline
+# Outline
 
 - Part 1 - Creating VPC, Subnet and Subnet associations
 
 - Part 2 - Creating Bashion Host and connect to the private subnet from internet
-
-- Part 3 - Creating NAT Gateway
-
-- Part 4 - Creating NAT Instance
-
-- Part 5 - Creating VPC peering between two VPCs
-
-- Part 6 - Creating VPC Endpoint
-
-- Part 7 - Configuring NACL 
 
 ## Part 1 - Creating VPC, Subnet and Subnet associations
 
