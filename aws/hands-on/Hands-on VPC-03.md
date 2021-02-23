@@ -83,7 +83,7 @@ service nginx start
 
 Security Group    : 
     Sec.Group Name : Private Sec.group
-    Rules          : All Traffic ---> Public Sec.Grp
+    Rules          : All Traffic ---> 0.0.0.0/0
 
 Tag             :
     Key         : Name
@@ -192,7 +192,7 @@ click create button
 ```
 Go to EC2 service from AWS console
 
-Select "Private WEB EC2" ---> Actions ---> Instance Settings ---> Attach/Replace IAM Role select newly created IAM role named 'clarusS3FullAccessforEndpoint' ---> Apply
+Select "Private WEB EC2" ---> Actions ---> Instance Settings ---> Modify IAM Role select newly created IAM role named 'clarusS3FullAccessforEndpoint' ---> Apply
 
 # STEP 2: Connect S3 Bucket from Private WEB Instance
 
