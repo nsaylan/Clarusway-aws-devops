@@ -139,11 +139,12 @@ Target ---> peering connection ---> select 'First Peering' ---> Save routes
 
 WARNING!!! ---> Please do not terminate "NAT Gateway" and "Private WEB EC2" for next part.
 
-
 ## Part 6 - Create VPC Endpoint
 
 # STEP 1: Prep
-
+Security Gorup:
+  Security Group Name: Private Sec.group
+  Rules: All Traffic --> Public Sec.Group
 ### A. Create S3 Bucket 
 
 - Go to the S3 service on AWS console
@@ -192,7 +193,7 @@ click create button
 ```
 Go to EC2 service from AWS console
 
-Select "Private WEB EC2" ---> Actions ---> Instance Settings ---> Modify IAM Role select newly created IAM role named 'clarusS3FullAccessforEndpoint' ---> Apply
+Select "Private WEB EC2" ---> Actions ---> Security ---> Modify IAM Role select newly created IAM role named 'clarusS3FullAccessforEndpoint' ---> Apply
 
 # STEP 2: Connect S3 Bucket from Private WEB Instance
 
@@ -233,7 +234,7 @@ ssh ec2-user@[Your private EC2 private IP]
 
 ```
 aws s3 ls
-aws s3 ls clarusway-vpc-endpoint
+aws s3 ls clarusway-vpc-endpoint (bucketname)
 ```
 - go to private route table named "clarus-private-rt" on VPC service
 
