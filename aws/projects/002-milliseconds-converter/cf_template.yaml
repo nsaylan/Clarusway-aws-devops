@@ -31,7 +31,7 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData: 
-        ImageId: ami-0947d2ba12ee1ff75
+        ImageId: ami-0947d2ba12ee1ff75 #güncellenecek
         InstanceType: t2.micro
         KeyName: serdar
         SecurityGroupIds: 
@@ -48,8 +48,8 @@ Resources:
               yum update -y
               yum install python3 -y
               pip3 install flask
-              TOKEN="ef581cea771ae3832b9c80ab1476a3b9474ae86a"
-              FOLDER="https://$TOKEN@raw.githubusercontent.com/serdarcw/milliseconds_project/master/"
+              TOKEN="df963865bf7b1e73808d3527b2050eb229cc520b"
+              FOLDER="https://$TOKEN@raw.githubusercontent.com/nsaylan/Clarusway-aws-devops/master/aws/projects/002-milliseconds-converter/20201014_Portfolio/"
               curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
               curl -s --create-dirs -o "/home/ec2-user/templates/result.html" -L "$FOLDER"templates/result.html
               curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"app.py
@@ -71,12 +71,12 @@ Resources:
       SecurityGroups:
         - !GetAtt ALBSecurityGroup.GroupId
       Subnets:
-        - subnet-077c9758
-        - subnet-3246e63c
-        - subnet-3ccd235a
-        - subnet-8d8dbfb3
-        - subnet-c41ba589
-        - subnet-ed49bccc
+        - subnet-a79aeaea #değişebilir
+        - subnet-b450caba #değişebilir
+        - subnet-5a79d405 #değişebilir
+        - subnet-6ece6e08 #değişebilir
+        - subnet-8d52a6bc #değişebilir
+        - subnet-f32d82d2 #değişebilir
       Type: application
 
   ALBListener:
