@@ -46,6 +46,7 @@ Sec Group: "Route 53 Sec"
 user data: 
 
 #!/bin/bash
+
 yum update -y
 yum install -y httpd
 yum install -y wget
@@ -69,6 +70,7 @@ Sec Group: "Route 53 Sec"
 user data:
 
 #!/bin/bash
+
 yum update -y
 yum install -y httpd
 yum install -y wget
@@ -92,6 +94,7 @@ Sec Group: "Route 53 Sec"
    "user data:"
 
 #!/bin/bash
+
 yum update -y
 yum install -y httpd
 yum install -y wget
@@ -114,6 +117,7 @@ Sec Group: "Route 53 Sec"
 user data:
 
 #!/bin/bash
+
 yum update -y
 yum install -y httpd
 yum install -y wget
@@ -353,7 +357,7 @@ Health Checker Regions: Keep it as default
 
 click Next
 
-Get Notifcation   : None
+Get Notifcation   : No
 
 click create and show that the status is unhealthy aproximitely after 90 seconds the instance healthcheck will turned into the "healthy" from "unhealthy"
 ```
@@ -413,7 +417,7 @@ Value/Route traffic to :
   - N.Virginia(us-east-1)
   - Choose your S3 bucket named "www.[your sub-donamin name].net"
 Failover record type    : Secondary
-Health check            : keep it as is
+Health check            : keep it as is/-
 Record ID               : Failover Scenario-secondary
 ```
 - click define Failover record button
@@ -605,6 +609,7 @@ Sec Group: "SSH 22, HTTP 80  > anywhere(0:/00000)"
 "user data:"
 
 #!/bin/bash
+
 yum update -y
 yum install -y httpd
 yum install -y wget
