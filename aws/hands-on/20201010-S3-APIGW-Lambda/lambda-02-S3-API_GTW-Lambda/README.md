@@ -50,21 +50,13 @@ PS: Please, do not forget to select "US East (N.Virginia)" as Region
 - Upload files from folder part-001_website
 ```
 1. Select files
-  - (all files minus css folder)
+  - (all files)
   - Click 'Next'
 2. Set Permissions
   - Click 'Next'
 3. Set Properties
   - Click 'Upload'
 ```
-
-
-- Create subfolder css using S3 web console
-  - Goto bucket "clarusway.broadcast"
-  - Click Create folder
-  - Name: css
-  - Click 'Save'
-  - Upload css folder.
 
 - Set the static website bucket policy as shown below (`PERMISSIONS` >> `BUCKET POLICY`) and change `bucket-name` with your own bucket.
 
@@ -196,7 +188,8 @@ Permissions > CORS configuration
 NOTE: Replace url in <AllowedOrigin> tag with your static website link from Part-1.
 ```
 
-```bash
+```bash #!!!jsan formatta yazılması gerekir.!!!
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
 <CORSRule>
@@ -258,7 +251,7 @@ STEP 2: Testing your function - Create test event
 
 Click 'Test' button and opening page Configure test events
 ```
-Select: Create new test event
+Select: Select a test event
 Event template: Hello World
 Event name: emptyClarus
 Input test event as;
@@ -300,7 +293,7 @@ STEP 4 : Exposing Lambda via API Gateway
 
 New Child Resource
   - Configure as proxy resource: Leave blank
-  - Resource Name: Random Number
+  - Resource Name: random-number
   - Resource Path: /random-number
   - Enable API Gateway CORS: Yes
   - Click 'Create Resource' button
@@ -316,9 +309,8 @@ New Child Resource
   - Integration type: Lambda Function
   - Use Lambda Proxy integration: Leave blank
   - Lambda Region: us-east-1
-  - Lambda Function: generateNumber
+  - Lambda Function: NumberGenerator
   - Click 'Save'
-  - Confirm the dialog 'Add Permission to Lambda Function', Click 'OK'
 ```
 
 STEP 5: Testing Lambda via API Gateway
