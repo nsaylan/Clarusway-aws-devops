@@ -56,6 +56,8 @@
 
 - Open your terminal and connect to the instance.
 
+- check whether nginx is installed "systemctl status nginx".
+
 ## Part 3 - Terminate the Environment
 
 ### Step 1 - Terminate the Environment
