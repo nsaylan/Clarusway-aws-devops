@@ -120,7 +120,7 @@ At the end of this hands-on training, students will be able to;
     4) Python 2.7 running on 64bit Amazon Linux (Deprecated)
     5) Python 2.6 running on 64bit Amazon Linux (Deprecated)
     6) Preconfigured Docker - Python 3.4 running on 64bit Debian (Deprecated)
-    (default is 1):
+    (default is 1): # Python 3.6 seçilmeli
 
   * Yes, Type y
 

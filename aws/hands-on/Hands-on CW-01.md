@@ -211,7 +211,7 @@ STEP 2 : Create IAM role
 
 - click create role
 
-- Go to instance named "Cloudwatch_Log" ---> Actions ---> Instance settings ---> Modify IAM role ----> Attach "CloudWatchLogsFullAccess" role ---> Apply
+- Go to instance named "Cloudwatch_Log" ---> Actions ---> Security ---> Modify IAM role ----> Attach "CloudWatchLogsFullAccess" role ---> Apply
 
 STEP 3:  Install and Configure the CloudWatch Logs Agent
 
