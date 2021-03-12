@@ -77,6 +77,7 @@ sudo su
 
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 724850377345.dkr.ecr.us-east-1.amazonaws.com
 ```
+# registry tanıtma
 
 ## Part 4 - Managing Docker Images using AWS ECR as Repository
 
@@ -177,7 +178,7 @@ docker run --name todo -dp 80:3000 724850377345.dkr.ecr.us-east-1.amazonaws.com/
 docker stop todo
 docker rm todo
 ```
-- make change into the script.`<p className="text-center">No items yet! Add one above!</p>` with following new text.
+- make change into the script. change`<p className="text-center">No items yet! Add one above!</p>` with following new text: `<p className="text-center">Hadi bakalım</p>`
 
 ```bash
 vi src/static/js/app.js
