@@ -286,7 +286,7 @@ git add .
 git commit -m 'prep for deploy stage'
 git push
 ```
-- obser the Jenkins to finish process
+- observe the Jenkins to finish process
 
 - Go to the Jenkins instance (todo-app-node-project/ directory)to create `Jenkinsfile`
 ```bash
