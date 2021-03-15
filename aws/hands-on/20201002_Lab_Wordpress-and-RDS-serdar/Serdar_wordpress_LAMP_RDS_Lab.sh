@@ -192,6 +192,16 @@ USE clarusway;
 select * from wp_comments;  # you can see the written two comments in here
 exit
 
+# 38.Create Messanger Instance and connce with SSH: 
+  
+---> Sec group: ssh-mysql aurora:0/00000 (or Wordpress_Instance_sec_group )
+  
+userdata:
+    
+#!/bin/bash
+yum update -y
+yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+yum install -y mysql-community-client
 
 # 34. Connect to the RDS instance to create "clarusway" database with HOST
 mysql -u admin -h [your-own-RDS-endpoint] -p
@@ -206,18 +216,6 @@ CREATE DATABASE clarusway;
 # 37. Show newly created database and exit
 SHOW DATABASES;
 EXIT;
-
-# 38.Create Messanger Instance and connce with SSH: 
-  
----> Sec group: ssh-mysql aurora:0/00000 (or Wordpress_Instance_sec_group )
-  
-userdata:
-    
-#!/bin/bash
-yum update -y
-yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
-yum install -y mysql-community-client
-
 
 # 39. Create dumb of "clarusway" database via connecting from "Messenger EC2" to the "Database Instance". Connect to Messenger EC'.
 mysqldump -u admin -h [your-own-database-instance-DNS] -p clarusway > clarusway_migration.sql
