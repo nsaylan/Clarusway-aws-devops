@@ -34,16 +34,19 @@ systemctl restart httpd
 # 4. Paste the DNS of EC2 instance to the browser 
 Error establishing a database connection
 
+# connect to EC2
+
 # 5. Check the httpd status
 sudo systemctl status  httpd
 
 # 6. Check the PHP version
 php --version 
-   #(you'll see HP 7.2.30)
+   #(you'll see HP 7.2.3?)
 
 # 7. Check the mariadb status
 sudo systemctl status mariadb
    #(you'll see mariadb not found)
+Unit mariadb.service could not be found.
 
 # 8. Install mariadb 
 sudo yum install -y mariadb-server
@@ -216,7 +219,7 @@ yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch
 yum install -y mysql-community-client
 
 
-# 39. Create dumb of "clarusway" database via connecting from "Messenger EC2" to the "Database Instance"
+# 39. Create dumb of "clarusway" database via connecting from "Messenger EC2" to the "Database Instance". Connect to Messenger EC'.
 mysqldump -u admin -h [your-own-database-instance-DNS] -p clarusway > clarusway_migration.sql
 
 # 40. Transfer the dumb file to the RDS instance 
