@@ -1,5 +1,5 @@
 
-VPC LAB_EU-Serdar-12/07/2020
+VPC LAB_EU-Serdar-12/10/2020
 
 
 # 1.Create 4 Sec.Group:
@@ -167,7 +167,7 @@ cd /var/www/html/
 sudo cp wp-config-sample.php wp-config.php
 
 # 29. Change the config file for database assosiation
-sudo vi wp-config.php
+sudo nano wp-config.php
 
      #define( 'DB_NAME', 'clarusway' );
 
