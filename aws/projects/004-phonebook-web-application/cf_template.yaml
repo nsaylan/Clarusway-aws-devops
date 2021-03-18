@@ -40,7 +40,7 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData: 
-        ImageId: ami-0947d2ba12ee1ff75
+        ImageId: ami-038f1ca1bd58a5790 #güncellenecek
         InstanceType: t2.micro
         KeyName: First_key_pair
         SecurityGroupIds: 
