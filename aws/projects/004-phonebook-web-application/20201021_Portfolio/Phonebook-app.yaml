@@ -23,7 +23,6 @@ Resources:
         - IpProtocol: tcp 
           FromPort: 80
           ToPort: 80
-          CidrIp: 0.0.0.0/0
           SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId 
       
   ALBSecurityGroup:
@@ -40,7 +39,7 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData:           
-        ImageId: ami-0947d2ba12ee1ff75
+        ImageId: ami-038f1ca1bd58a5790 #güncellenecek
         InstanceType: t2.micro
         Keyname: First_key_pair
         SecurityGroupIds:
@@ -60,12 +59,12 @@ Resources:
                 pip3 install flask
                 pip3 install flask_mysql
                 echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
-                TOKEN="ef581cea771ae3832b9c80ab1476a3b9474ae86a"
+                TOKEN="321d8ab79b07447898e1f2dd80ffd636ede2161f"
                 FOLDER="https://$TOKEN@raw.githubusercontent.com/nsaylan/Clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/20201021_Portfolio/"
                 curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"templates/add-update.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
-                curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"phonebook-app.py
+                curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"Phonebook-app.py
                 python3 /home/ec2-user/app.py
               - MyDBURI: !GetAtt MyDBServer.Endpoint.Address
             
@@ -141,7 +140,7 @@ Resources:
       DBName: phonebook
       DBSecurityGroups: 
         - !Ref MyDBSecurityGroup
-      Engine: mysql
+      Engine: MYSQL
       DBInstanceClass: db.t2.micro #required
       EngineVersion: 8.0.19
       MasterUsername: admin 
