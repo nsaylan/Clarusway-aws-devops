@@ -9,7 +9,12 @@ Description: |
   WebServerASG Auto Scaling Group is using the WebServerLT Launch Template in order to spin up instances needed.
   WebServerLT Launch Template is configured to prepare Python Flask environment on EC2,
   and to deploy Phonebook Application on Flask Server after downloading the app code from Github repository.
-  
+
+Parameters:
+  KeyPairName:
+    Description: Enter the name of your Key Pair for SSH connection.
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: Must one of the existing EC2 Keypair  
  
 Resources:
   WebServerSecurityGroup:
@@ -42,7 +47,7 @@ Resources:
       LaunchTemplateData: 
         ImageId:  ami-038f1ca1bd58a5790 #güncellenecek
         InstanceType: t2.micro
-        KeyName: First_key_pair #değişebilir
+        KeyName: !Ref KeyPairName
         SecurityGroupIds: 
           - !GetAtt WebServerSecurityGroup.GroupId
         TagSpecifications: 
