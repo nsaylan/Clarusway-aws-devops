@@ -16,14 +16,14 @@ Resources:
     Properties:
       GroupDescription: Enable HTTP for Flask Web Server and SSH for entering to EC2 
       SecurityGroupIngress:
-        - IpProtocol: tcp 
-          FromPort: 22
-          ToPort: 22
-          CidrIp: 0.0.0.0/0
-        - IpProtocol: tcp 
-          FromPort: 80
-          ToPort: 80
-          SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId 
+         - IpProtocol: tcp 
+           FromPort: 22
+           ToPort: 22
+           CidrIp: 0.0.0.0/0
+         - IpProtocol: tcp 
+           FromPort: 80
+           ToPort: 80
+           SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId 
       
   ALBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -64,7 +64,7 @@ Resources:
                 curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"templates/add-update.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
-                curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"Phonebook-app.py
+                curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"phonebook-app.py
                 python3 /home/ec2-user/app.py
               - MyDBURI: !GetAtt MyDBServer.Endpoint.Address
             
@@ -84,7 +84,7 @@ Resources:
       IpAddressType: ipv4
       Scheme: internet-facing
       SecurityGroups:
-        - !GetAtt ALBSecurityGorup.GroupId
+        - !GetAtt ALBSecurityGroup.GroupId
       Subnets:
         - subnet-5a79d405
         - subnet-6ece6e08

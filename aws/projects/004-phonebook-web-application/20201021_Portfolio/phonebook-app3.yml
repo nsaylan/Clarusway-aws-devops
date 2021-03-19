@@ -42,7 +42,7 @@ Resources:
       LaunchTemplateData: 
         ImageId:  ami-038f1ca1bd58a5790 #güncellenecek
         InstanceType: t2.micro
-        KeyName: First_key_pair
+        KeyName: First_key_pair #değişebilir
         SecurityGroupIds: 
           - !GetAtt WebServerSecurityGroup.GroupId
         TagSpecifications: 
@@ -89,12 +89,12 @@ Resources:
       SecurityGroups:
         - !GetAtt ALBSecurityGroup.GroupId
       Subnets:
-        - subnet-5a79d405
-        - subnet-6ece6e08
-        - subnet-8d52a6bc
-        - subnet-a79aeaea
-        - subnet-b450caba
-        - subnet-f32d82d2
+        - subnet-5a79d405 # güncellenecek
+        - subnet-6ece6e08 # güncellenecek
+        - subnet-8d52a6bc # güncellenecek
+        - subnet-a79aeaea # güncellenecek
+        - subnet-b450caba # güncellenecek
+        - subnet-f32d82d2 # güncellenecek
       Type: application
 
   ALBListener:
