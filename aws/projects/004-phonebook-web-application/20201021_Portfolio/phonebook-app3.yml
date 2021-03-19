@@ -139,7 +139,7 @@ Resources:
       AllowMajorVersionUpgrade: false 
       AutoMinorVersionUpgrade: true
       BackupRetentionPeriod: 0
-      DBInstanceIdentifier: phonebook-app-db1
+      DBInstanceIdentifier: phonebook-app-db
       DBName: phonebook
       DBSecurityGroups: 
         - !Ref MyDBSecurityGroup
