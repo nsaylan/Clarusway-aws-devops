@@ -1,4 +1,4 @@
-## Part 2 - Creating Bastion Host and connect to the private subnet from internet (01.10.2020)
+## Part 2 - Creating Bastion Host and connect to the private subnet from internet
 
 - discuss about how to connect to the "clarus-az1a-private-subnet" instance
 
@@ -13,14 +13,13 @@ AMI             : Amazon Linux 2
 Instance Type   : t2.micro
 Network         : clarus-vpc-a
 Subnet          : clarus-az1a-public-subnet
-Tag             :
-    Key         : Name
-    Value       : Public EC2 (Bastion Host
 Security Group  : 
     Sec.Group Name : Public Sec.group
     Rules          : TCP --- > 22 ---> Anywhere
                    : All ICMP IPv4  ---> Anywhere
-
+Tag             :
+    Key         : Name
+    Value       : Public EC2 (Bastion Host)
 ```
 
 - Configure Private instance.
@@ -30,13 +29,12 @@ AMI             : Amazon Linux 2
 Instance Type   : t2.micro
 Network         : clarus-vpc-a
 Subnet          : clarus-az1a-private-subnet
-Tag             :
-    Key         : Name
-    Value       : Private EC2
 Security Group  : 
     Sec.Group Name : Private Sec.group
     Rules          : TCP --- > 22 ---> Anywhere
-
+Tag             :
+    Key         : Name
+    Value       : Private EC2
 ```
 
 - This configuration adds an extra layer of security and can also be used.

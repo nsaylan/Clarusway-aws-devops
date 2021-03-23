@@ -77,7 +77,7 @@ Resources:
         PriceClass: PriceClass_All
         ViewerCertificate: 
           AcmCertificateArn: !Ref KittensCertificate
-          SslSupportMethod: sni-only
+          SslSupportMethod: sni-only #server name indication
 Outputs:
   BucketName: 
     Description: S3 Bucket URL for Kittens Website
