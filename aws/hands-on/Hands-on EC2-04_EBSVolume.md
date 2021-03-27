@@ -74,8 +74,11 @@ df -h
 ls -lh /mnt/2nd-vol/
 # show that mounting point path will be gone when instance rebooted 
 sudo reboot now
+
+# connect instance again.
 # show the new volume is still attached, but not mounted
 lsblk
+df -h
 # check if the attached volume is already formatted or not and has data on it.
 sudo file -s /dev/xvdf
 # mount the new volume to the mounting point path
@@ -106,17 +109,18 @@ df -h
 sudo fdisk -l
 # check all available fdisk commands and using "m".
 sudo fdisk /dev/xvdg
+# Command (m for help)
 # n -> add new partition (with 1G size)
 # p -> primary
 # Partition number: 1
 # First sector: default - use Enter to select default
-# Last sector: 2100000
+# Last sector: 2100000 / +1g
 # n -> add new partition (with rest of the size-1G)
 # p -> primary
 # Partition number: 2
 # First sector: default - use Enter to select default
 # Last sector: default - use Enter to select default
-# w -> write partition table
+# w -> write table to disk and exit
 # show new partitions
 lsblk
 # format the new partitions
@@ -126,8 +130,8 @@ sudo mkfs -t ext4 /dev/xvdg2
 sudo mkdir /mnt/3rd-vol-part1
 sudo mkdir /mnt/3rd-vol-part2
 # mount the new volume to the mounting point path
-sudo mount /dev/xvdg1 /mnt/3rd-vol-part1/
-sudo mount /dev/xvdg2 /mnt/3rd-vol-part2/
+sudo mount /dev/xvdg1 /mnt/3rd-vol-part1
+sudo mount /dev/xvdg2 /mnt/3rd-vol-part2
 # list volumes to show current status, all volumes and partittions should be listed
 lsblk
 # show the used and available capacities related with volumes and partitions
@@ -165,6 +169,8 @@ sudo nano /etc/fstab  # sudo vim /etc/fstab   >>> for vim
 
 # reboot and show that configuration exists (NOTE)
 sudo reboot now
+
+# connect to instance
 # list volumes to show current status, all volumes and partittions should be listed
 lsblk
 # show the used and available capacities related with volumes and partitions
