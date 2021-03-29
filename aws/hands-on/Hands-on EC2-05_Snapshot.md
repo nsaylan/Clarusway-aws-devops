@@ -58,7 +58,7 @@ At the end of the this hands-on training, students will be able to;
 
 Select resource type : Instance
 Instance ID          : Select the instance ID of Nginx
-Name                 : Instance-Snapshot_First
+Description          : Instance-Snapshot_First
 
 4. Click create snapshot.
 
@@ -68,15 +68,15 @@ Name                 : Instance-Snapshot_First
 Name        : ClaruswayAMI_1
 Description : ClaruswayAMI_1
 
+51. Click `Create` button.
 
 6. Click the `launch instance` tab.
 
 7. Click `myAMI` from left-hand menu.
 
-8. Select `Instance-snapshot_1
-`
+8. Select `ClaruswayAMI_1`
 
-9. Show that security group rules (SSH, HTTP) and `user data` same as original EC2 Nginx instance.
+9. Show that security group rules (SSH, HTTP) and `user data` same as original EC2 Nginx instance.??
 
 10. Launch instance.
 
@@ -92,9 +92,10 @@ Description : ClaruswayAMI_1
 
 16. Select image >> create image.
 
-Name        : ClaruswayAMI_2
-Description : ClaruswayAMI_2
+Image Name  : ClaruswayAMI_2
+Image Description : ClaruswayAMI_2
 
+161. Click 'Create' button
 
 17. Click AMI section from left hand menu and show `ClaruswayAMI_2`
 
@@ -125,9 +126,8 @@ Description : ClaruswayAMI_2
 Select resource type : Volume
 Instance ID : select the root volume of the SampleInstance
 
-
 29. Click create snapshot.
-
+291. Create AMI with this snapshot
 
 Name        : ClaruswayAMI_3
 Description : ClaruswayAMI_3
@@ -168,8 +168,8 @@ ls
 43. Select image >> create image.
 
 
-Name        : ClaruswayAMI_4
-Description : ClaruswayAMI_4
+Image Name        : ClaruswayAMI_4
+Image Description : ClaruswayAMI_4
 
 
 44. Click the `launch instance` tab.
