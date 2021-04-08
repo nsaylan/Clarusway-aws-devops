@@ -180,7 +180,7 @@ docker start 4e6 && docker attach 4e6
 docker inspect clarus | less
 ```
 
-- Deletz  the first container using its `ID`.
+- Delete  the first container using its `ID`.
 
 ```bash
 docker rm 4e6

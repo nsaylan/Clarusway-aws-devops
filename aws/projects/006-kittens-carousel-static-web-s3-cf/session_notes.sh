@@ -12,7 +12,7 @@ Parameters
 
 - S3
  - Bucket
- - Bucket Policy
+ - Bucket (public) Policy
 
 - Cloudfront
  - Cloudfront Distribution
