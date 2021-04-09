@@ -30,18 +30,17 @@ Parameters:
 Mappings:
   RegionImageMap:
     us-east-1:
-      AMI: ami-0c94855ba95c71c99 #güncellenecek
+      AMI: ami-0742b4e673072066f
     us-east-2:
-      AMI: ami-0603cbe34fd08cb81 #güncellenecek
+      AMI: ami-05d72852800cbf29e
     us-west-1:
-      AMI: ami-0e65ed16c9bf1abc7 #güncellenecek
+      AMI: ami-0577b787189839998
     us-west-2:
-      AMI: ami-0841edc20334f9287 #güncellenecek
+      AMI: ami-0518bb0e75d3619ca
     eu-west-1:
-      AMI: ami-08a2aed6e0a6f9c7d #güncellenecek
-      
+      AMI: ami-0ffea00000f287d30
 Resources:
-
+ 
   myAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
@@ -74,10 +73,10 @@ Resources:
           chmod -R 777 /var/www/html
           echo "<html>
           <head>
-              <title> Congratulations! You have created an instance from Launch Configuration</title>
+              <title> Congratulations! You have created an instance from Launch Template</title>
           </head>
           <body>
-              <h1>This web server is launched from launch configuration by NECİP</h1>
+              <h1>This web server is launched from launch configuration by YOUR_NAME</h1>
               <p>This instance is created at <b>$DATE_TIME</b></p>
               <p>Private IP address of this instance is <b>$PRIVATE_IP</b></p>
               <p>Public IP address of this instance is <b>$PUBLIC_IP</b></p>
@@ -131,7 +130,7 @@ Resources:
       UnhealthyThresholdCount: 3
       VpcId: !Ref VpcId
   
- 
+  
   mySecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
@@ -145,7 +144,9 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
-            
+          
+    
+  
 Outputs:
   URL:
     Description: The URL of the website
@@ -153,18 +154,3 @@ Outputs:
       - ''
       - - 'http://'
         - !GetAtt myApplicationLoadBalancer.DNSName
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
