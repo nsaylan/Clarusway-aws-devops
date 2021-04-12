@@ -36,10 +36,10 @@ ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazon
 
 - For Linux systems, after installing Docker, you need install Docker Compose separately. But, Docker Desktop App for Mac and Windows includes `Docker Compose` as a part of those desktop installs.
 
-- Download the current stable release of `Docker Compose` executable.
+- Download the current stable release of `Docker Compose` executable. Check version of Docker-compose from web page: "https://github.com/docker/compose/releases"
 
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" \
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" \
 -o /usr/local/bin/docker-compose
 ```
 
