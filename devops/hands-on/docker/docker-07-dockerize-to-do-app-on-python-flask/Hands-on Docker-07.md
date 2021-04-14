@@ -309,7 +309,7 @@ docker network ls
   - List all task in  the `To Do List` API using `/todos` path and HTTP `GET` method with `curl` command.
 
   ```bash
-  curl http://<ec2-host-name>/todos
+  curl http://<ec2-host-name>/todos # write the command in VSCode terminal
   ```
 
   - Retrieve task with `id=3` using `/todos/3` path and HTTP `GET` method with `curl` command.
