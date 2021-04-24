@@ -60,6 +60,8 @@ ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazon
 
     - SSH port 22 from 0.0.0.0\0 (for increased security replace this with your own IP)
 
+  - Add Custom TCP 7946, Custom UDP 7946, Custom UDP 4789 to swarm Dockermachine security group.
+
 - Initialize `docker swarm` with Private IP and assign your first docker machine as manager:
 
 ```bash
@@ -97,7 +99,12 @@ docker swarm join --token <worker_token> <manager_ip>:2377
 ```bash
 docker node ls
 ```
-
+```bash
+docker node promote worker-1
+```
+```bash
+docker node demote worker-1
+```
 ## Part 3 - Using Overlay Network in Docker Swarm
 
 - List Docker networks and explain overlay network (ingress)
@@ -168,6 +175,7 @@ docker service ps for_ping
 ```bash
 docker container ls
 ```
+- connect to ec2-instance that for_ping is runnin in.
 
 - Connect the `for_ping` container.
 
@@ -207,8 +215,8 @@ echo "clarus123@" > password.txt
 - Create docker secrets for both.
 
 ```bash
-docker secret create username ./name.txt
-docker secret create userpassword ./password.txt
+docker secret create username ./name.txt # dosya içindeki user ismini şifreleme
+docker secret create userpassword ./password.txt # dosya içindeki clarus123@ şifresini şifreleme
 ```
 
 - List docker secrets.
@@ -228,6 +236,7 @@ docker service create -d --name secretdemo --secret username --secret userpasswo
 ```bash
 docker service ps secretdemo
 ```
+- connect to ec2-instance that running secretdemo.
 
 - Connect the `secretdemo` container and show the secrets.
 
