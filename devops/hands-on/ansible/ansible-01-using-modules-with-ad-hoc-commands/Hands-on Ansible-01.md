@@ -186,15 +186,15 @@ load average over the last 15 minutes: 1%
 - Run the command below.
 
 ```bash
-$ ansible webservers -m shell -a "systemctl status sshd"
+$ ansible webservers -m shell -a "systemctl status sshd" #sistem bilgisi
 ```
 - Explain the output.
 
 - Run the command below.
 ```bash
-$ ansible webservers -m command -a 'df -h'
+$ ansible webservers -m command -a 'df -h' # boyut, doluluk oranı, mount durumu
 ```
-- Then run the same command without ```-m command``` part.
+- Then run the same command without ```-m command``` part. default olduğu için yazılmayabilir.
 
 ```bash
 $ ansible webservers -a 'df -h'
