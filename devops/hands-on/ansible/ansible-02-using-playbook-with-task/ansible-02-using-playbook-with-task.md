@@ -184,7 +184,7 @@ $ vim playbook4.yml
      shell: "service httpd start"
 
 - name: Apache installation for ubuntuservers
-  hosts: ubuntuserver
+  hosts: ubuntuservers
   tasks:
    - name: install the latest version of Apache
      apt:
@@ -198,7 +198,7 @@ ansible all -b -m package -a "name=nginx state=absent"
 - Run the yaml file.
 
 ```bash
-$ ansible-playbook -b playbook4.yml
+$ ansible-playbook playbook4.yml
 $ ansible-playbook -b playbook4.yml   # Run the command again and show the changing parts of the output.
 ```
 
@@ -217,7 +217,7 @@ $ vim playbook5.yml
        state: absent
 
 - name: Remove Apache from ubuntuservers
-  hosts: ubuntuserver
+  hosts: ubuntuservers
   tasks:
    - name: Remove Apache
      apt:
@@ -282,7 +282,7 @@ vim playbook7.yml
 
 ---
 - name: play 6
-  hosts: ubuntuserver
+  hosts: ubuntuservers
   tasks:
    - name: Uninstalling Apache
      apt:
