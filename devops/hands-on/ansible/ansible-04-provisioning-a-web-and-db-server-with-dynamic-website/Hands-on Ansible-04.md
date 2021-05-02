@@ -128,6 +128,7 @@ $ vi inventory.txt
 db_server   ansible_host=<YOUR-DB-SERVER-IP>   ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
 web_server  ansible_host=<YOUR-WEB-SERVER-IP>  ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
 ```
+$ ansible all -m ping -i inventory.txt
 
 - Create a file named ```ping-playbook.yml``` and paste the content below.
 
@@ -156,6 +157,8 @@ $ ansible-playbook ping-playbook.yml -i inventory.txt
 ```
 [defaults]
 host_key_checking = False
+inventory = inventory.txt
+interpreter_python = auto_silent
 ```
 
 - Run the command below again.
@@ -188,12 +191,12 @@ inventory=inventory.txt
             - python3-PyMySQL
         state: latest
 
-    - name: start mariadb
-      become: yes  
-      command: systemctl start mariadb
-
-    - name: enable mariadb
-      become: yes
+    - name: start mariadb                   # name: start and enable mariadb
+      become: yes                           # become:yes
+      command: systemctl start mariadb      # systemd:
+                                            # name: mariadb
+    - name: enable mariadb                  # state: started
+      become: yes                           # enabled: true
       systemd: 
         name: mariadb
         enabled: true
@@ -212,6 +215,7 @@ ansible-playbook playbook.yml
 - Open up a new Terminal or Window and connect to the ```db_server``` instance and check if ```MariaDB``` is installed, started, and enabled. 
 
 ```bash
+ansible db_server -m shell -a "mysql --version"
 mysql --version
 ```
 
@@ -233,7 +237,7 @@ INSERT INTO products (Name,Price,ImageUrl) VALUES ("Laptop","100","c-1.png"),("D
 ```yml
     - name: copy the sql script
       copy:
-        src: ~/db-load-script.sql
+        src: ~/Ansible-Website-Project/db-load-script.sql
         dest: ~/
 ```
 
@@ -243,6 +247,8 @@ INSERT INTO products (Name,Price,ImageUrl) VALUES ("Laptop","100","c-1.png"),("D
 $ ansible-playbook -b playbook.yml
 ```
 - Check if the file has been sent to the database server.
+
+$ ansible db_server -a "ls -al"
 
 - Append the content below into ```playbook.yml``` file in order to login to db_server and set a root password.
 
