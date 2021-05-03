@@ -122,7 +122,7 @@ $ sudo vi inventory.txt
 [servers]
 db_server   ansible_host=<YOUR-DB-SERVER-IP>   ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
 web_server  ansible_host=<YOUR-WEB-SERVER-IP>  ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
-test_server  ansible_host=<YOUR-WEB-SERVER-IP>  ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
+test_server  ansible_host=<YOUR-TEST-SERVER-IP>  ansible_user=ec2-user  ansible_ssh_private_key_file=~/<YOUR-PEM-FILE>
 ```
 - Create file named ```ansible.cfg``` under the the ```dynamic-inventory``` directory.
 
@@ -175,7 +175,7 @@ $ ansible-playbook ping-playbook.yml
 - install "boto3"
 
 ```bash
-$ sudo pip3 install --user boto3
+$ pip3 install --user boto3
 ```
 
 - Create another file named ```inventory_aws_ec2.yml``` in the project directory.

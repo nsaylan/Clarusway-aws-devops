@@ -112,7 +112,7 @@ $ ansible-playbook ping-playbook.yml
 
 ## Part 2 - Using Ansible Roles
 
-- Install ngnix server and restart it with using Ansible roles.
+- Install apache server and restart it with using Ansible roles.
 
 ansible-galaxy init /home/ec2-user/ansible/roles/apache
 
@@ -152,8 +152,10 @@ vi role1.yml
 
 ---
 - name: Install and Start apache
-  hosts: _test_server
+  hosts: test_server
   become: yes
+  vars:
+    ansible_ssh_private_key_file: "/home/ec2-user/mykey.pem"
   roles:
     - apache
 ```
