@@ -230,7 +230,7 @@ Stdout:
 
 - Inspect the role:
 
-$ cd /home/ec2-user/.ansible/roles/geerlingguy.nginx
+$ cd /home/ec2-user/ansible/roles/geerlingguy.nginx
 
 $ ls
 defaults  handlers  LICENSE  meta  molecule  README.md  tasks  templates  vars

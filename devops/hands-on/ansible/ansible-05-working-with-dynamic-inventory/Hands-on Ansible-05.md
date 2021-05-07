@@ -91,7 +91,7 @@ $ ansible --version
 ```
 
 
-- Run the command below to transfer your pem key to your Ansible Controller Node.
+- Run the command (in the local pem folder) below to transfer your pem key to your Ansible Controller Node.
 
 ```bash
 $ scp -i <PATH-TO-PEM-FILE> <PATH-TO-PEM-FILE> ec2-user@<CONTROLLER-NODE-IP>:/home/ec2-user
