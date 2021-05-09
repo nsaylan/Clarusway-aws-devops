@@ -151,7 +151,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  template:
+  template: # pod dosyasında yazılanı aşağı kaydediyoruz.
     metadata:
       labels:
         app: nginx
@@ -172,7 +172,7 @@ kubectl apply -f myreplicaset.yaml
 - List the replicasets.
 
 ```bash
-kubectl get replicaset
+kubectl get replicaset/rs
 ```
 
 - List pods with more information.

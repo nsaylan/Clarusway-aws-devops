@@ -146,7 +146,7 @@ sudo kubeadm config images pull
 - Let `kubeadm` prepare the environment for you. Note: Do not forget to change `<ec2-private-ip>` with your master node private IP.
 
 ```bash
-sudo kubeadm init --apiserver-advertise-address=<ec2-private-ip> --pod-network-cidr=172.16.0.0/16
+sudo kubeadm init --apiserver-advertise-address=<master ec2-private-ip> --pod-network-cidr=172.16.0.0/16
 ```
 
 > :warning: **Note**: If you are working on `t2.micro` or `t2.small` instances,  use the command with `--ignore-preflight-errors=NumCPU` as shown below to ignore the errors.
@@ -348,7 +348,7 @@ kubectl get pods
 > ```bash
 >  sudo rm /etc/kubernetes/kubelet.conf
 >  sudo rm /etc/kubernetes/pki/ca.crt
->  sudo netstat -lnp | grep 1025
+>  sudo netstat -lnp | grep 10250
 >  sudo kill <process-id>
 >  ```
 
