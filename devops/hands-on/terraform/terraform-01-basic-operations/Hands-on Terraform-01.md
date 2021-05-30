@@ -516,7 +516,7 @@ $ terraform state list
 aws_instance.tf-example-ec2
 aws_s3_bucket.tf-example-s3
 
-# After deleting S3 bucket. Now, you don't have S3 bucket. 
+# After deleting S3 bucket in the console. Now, you don't have S3 bucket. 
 $ terraform state list
 aws_instance.tf-example-ec2
 aws_s3_bucket.tf-example-s3
@@ -542,7 +542,7 @@ aws_instance.tf-example-ec2
 ```bash
 resource "aws_instance" "tf-example-ec2" {
     - ami           = "ami-09d95fab7fff3776c"
-    + ami           = "ami-0885b1f6bd170450c"
+    + ami           = "ami-0885b1f6bd170450c" #ubuntu ami
     instance_type = "t2.micro" 
     key_name      = "northvirginia"    #<pem file>
     tags = {
@@ -704,6 +704,7 @@ resource "aws_instance" "tf-example-ec2" {
   }
 }
 ```
+- variable.tf dosyasında ec2-name ve ec2-type bölümünü yorum içine al.
 
 - A `local` value assigns a name to an expression, so you can use it multiple times within a module without repeating it.
 
