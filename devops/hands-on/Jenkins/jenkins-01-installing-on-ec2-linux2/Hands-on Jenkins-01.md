@@ -235,7 +235,7 @@ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 - Start Jenkins application.
 
 ```bash
-java -jar jenkins.war --httpPort=8080
+java -jar jenkins.war --httpPort=8080 &
 ```
 
 - Copy the admin password from log or from the file `~/.jenkins/secrets/initialAdminPassword`.
@@ -321,6 +321,10 @@ docker version
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
+```
+
+```bash
+docker-compose --version
 ```
 
 - Make a directory for `docker-compose.yaml`
